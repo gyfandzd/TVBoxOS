@@ -1,3 +1,26 @@
+// Your app's build.gradle
+
+apply plugin: 'com.android.app'
+
+android {
+
+  compileSdkVersion 27
+
+  defaultConfig {
+
+      appId "com.google.example.64bit"
+
+      minSdkVersion 15
+
+      targetSdkVersion 28
+
+      versionCode 1
+
+      versionName "1.0"
+
+      ndk.abiFilters 'armeabi-v7a','arm64-v8a','x86','x86_64'
+
+// ...
 
 
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
@@ -34,20 +57,3 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
-// Your app's build.gradle
-plugins {
-    id("com.android.app")
-}
-
-android {
-    compileSdkVersion(27)
-    defaultConfig {
-        appId = "com.google.example.64bit"
-        minSdkVersion(15)
-        targetSdkVersion(28)
-        versionCode = 1
-        versionName = "1.0"
-        ndk {
-            abiFilters += listOf("armeabi-v7a","arm64-v8a","x86","x86_64")
-        }
-// ...
